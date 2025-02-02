@@ -38,7 +38,7 @@ function getUserLocation() {
 
 // Function to display the 7-day forecast
 function displayForecast(data) {
-    let dailyForecasts = {}; 
+    let dailyForecasts = {};
 
     // OpenWeatherMap provides data at 3-hour intervals, so we group it by day
     data.list.forEach((entry) => {
@@ -60,19 +60,19 @@ function displayForecast(data) {
     });
 
     // Get the first 7 days from the forecast
-    let forecastHTML = "<h2>7-Day Weather Forecast</h2>";
+    let forecastHTML = "";
     Object.keys(dailyForecasts)
         .slice(0, 7) // Take the first 7 days
         .forEach((date) => {
             const dayData = dailyForecasts[date];
             const avgTemp = (dayData.tempSum / dayData.count).toFixed(1);
             forecastHTML += `
-                <div style="border: 1px solid #ddd; padding: 10px; margin: 5px; border-radius: 8px;">
+                <div class="forecast">
                     <h3>${date}</h3>
                     <p>🌡️ Avg Temp: ${avgTemp}°C</p>
                     <p>🔻 Min: ${dayData.minTemp.toFixed(1)}°C | 🔺 Max: ${dayData.maxTemp.toFixed(1)}°C</p>
                     <p>🌦️ ${dayData.weather}</p>
-                    <img src="https://openweathermap.org/img/wn/${dayData.icon}.png" alt="Weather Icon">
+                    <img class="weather-icon" src="https://openweathermap.org/img/wn/${dayData.icon}.png" alt="Weather Icon">
                 </div>
             `;
         });
