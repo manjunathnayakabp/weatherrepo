@@ -1,34 +1,39 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     text-align: center;
-    background: #f0f8ff;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container */
 .container {
-    max-width: 400px;
-    margin: auto;
+    max-width: 600px;
+    margin: 20px auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-input {
-    width: 80%;
-    padding: 10px;
+/* Forecast card */
+.forecast {
+    background: #e3f2fd;
     margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button {
-    padding: 10px;
-    background: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
+/* Weather icon */
+.weather-icon {
+    width: 50px;
 }
 
-#weatherResult {
-    margin-top: 20px;
-    font-size: 18px;
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
 }
